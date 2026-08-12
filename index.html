@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Ultimate BMW Yuv — The Ultimate Driving Machine</title>
+  <meta name="description" content="A BMW-inspired car showcase with model cards and interactive details.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="roundel"><span>BMW</span></div>
+      <div class="brand-name">ULTIMATE BMW YUV</div>
+    </div>
+    <nav>
+      <a href="#models">Models</a>
+      <a href="#electric">Electric</a>
+      <a href="#m">BMW M</a>
+    </nav>
+    <button class="menu" aria-label="Open menu">☰</button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">THE ULTIMATE DRIVING MACHINE</p>
+        <h1>Find the BMW<br><em>made for you.</em></h1>
+        <p class="hero-text">Explore the BMW range. Select a model to discover its character, drivetrain, performance and key highlights.</p>
+        <a class="primary" href="#models">Explore models <span>→</span></a>
+      </div>
+      <div class="hero-car" aria-hidden="true">
+        <div class="glow"></div>
+        <div class="car-silhouette">BMW</div>
+      </div>
+    </section>
+
+    <section class="model-section" id="models">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">BMW MODEL RANGE</p>
+          <h2>Choose your BMW.</h2>
+        </div>
+        <div class="filters">
+          <button class="filter active" data-filter="all">All</button>
+          <button class="filter" data-filter="suv">SUV</button>
+          <button class="filter" data-filter="sedan">Sedan</button>
+          <button class="filter" data-filter="electric">Electric</button>
+          <button class="filter" data-filter="m">M</button>
+        </div>
+      </div>
+
+      <div class="search-row">
+        <input id="search" type="search" placeholder="Search a BMW model…" aria-label="Search models">
+        <span id="count"></span>
+      </div>
+
+      <div id="grid" class="grid"></div>
+    </section>
+
+    <section class="feature" id="electric">
+      <div>
+        <p class="eyebrow">BMW ELECTRIC</p>
+        <h2>Power, reinvented.</h2>
+        <p>Discover a new generation of electric BMWs designed around instant response, long-distance comfort and intelligent technology.</p>
+        <button class="outline" onclick="applyFilter('electric')">Explore electric models →</button>
+      </div>
+      <div class="feature-stat"><strong>100%</strong><span>electric driving</span></div>
+    </section>
+
+    <section class="m-banner" id="m">
+      <div>
+        <p class="eyebrow">BMW M</p>
+        <h2>Born on the track.<br>Built for the road.</h2>
+      </div>
+      <button class="primary" onclick="applyFilter('m')">Discover M models →</button>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-brand">BMW</div>
+    <p>This fan-made showcase is not an official BMW website. BMW and its trademarks belong to BMW AG.</p>
+    <a href="https://www.bmw.in/en/all-models.html" target="_blank" rel="noopener">Visit BMW India →</a>
+  </footer>
+
+  <div id="modal" class="modal" aria-hidden="true">
+    <div class="modal-backdrop" onclick="closeModal()"></div>
+    <article class="modal-card">
+      <button class="close" onclick="closeModal()" aria-label="Close">×</button>
+      <img id="modalImage" alt="">
+      <div class="modal-content">
+        <p id="modalType" class="eyebrow"></p>
+        <h2 id="modalName"></h2>
+        <p id="modalTagline" class="tagline"></p>
+        <p id="modalDescription"></p>
+        <div class="specs">
+          <div><span>Powertrain</span><strong id="modalDrive"></strong></div>
+          <div><span>Power</span><strong id="modalPower"></strong></div>
+          <div><span>0–100 km/h</span><strong id="modalZero"></strong></div>
+          <div><span>Character</span><strong id="modalCharacter"></strong></div>
+        </div>
+      </div>
+    </article>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
